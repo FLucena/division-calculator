@@ -12,7 +12,11 @@ const DividePage = () => {
       const divisionResult = divide(dividend, divisor);
       setResult(divisionResult);
     } catch (error) {
-      alert(error.message);
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert('An unknown error occurred');
+      }
     }
   };
 
